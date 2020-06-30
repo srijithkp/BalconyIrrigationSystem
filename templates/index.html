@@ -1,27 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Balcony Irrigation System</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="../static/style.css">
-  </head>
-  <div class="header">
-    <h2>Balcony Watering System</h2>
-  </div>
-
-  <div class="row">
-    <div class="column1">
-      <a href="/Watering/" class="button">Watering</a>
-    </div>
-    <div class="column2">
-      <a class="button" href="sensors.html">Sensors</a>
-    </div>
-    <div class="column3">
-        <a class="button" href="weather.html">Weather</a>
-    </div>
-  </div>
-
-  <div class="footer">
-    <p>Footer</p>
-  </div>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+        <title>BringNatureInside</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='master.css') }}">
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <h1>Balcony Irrigation System</h1>
+            </div>
+        </header>
+        <nav>
+            <div class="container">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/Watering/">Watering</a></li>
+                    <li><a href="#">Sensors</a></li>
+                    <li><a href="#">Weather</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="content">
+            <div class="container">
+                <form action="/Watering/" target="_blank">
+                    <button class="button" type="submit">Watering</button>
+                </form>
+                <form action="/Watering/" target="_blank">
+                    <button class="button" type="submit">Sensors</button>
+                </form>
+                <form action="/Watering/" target="_blank">
+                    <button class="button" type="submit">Weather</button>
+                </form>
+            </div>
+        </div>
+        <footer id="main-footer">
+            <div class="container">
+                <p>Copyright &copy; 2020 BringNatureInside</p>
+            </div>
+        </footer>
+    </body>
 </html>

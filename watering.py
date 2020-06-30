@@ -4,44 +4,45 @@ import RPi.GPIO as GPIO
 import datetime
 import time
 
-gpioDeviceMap = {'Pump':7,
-                'plantOne': 11,
-                'plantTwo': 13,
-                'plantThree': 15,
-                'plantFour': 29,
-                'plantFive': 31,
-                'plantSix': 33,
-                'plantSeven': 35}
-
-gpioDeviceState ={};
+gpioDeviceMap = {
+    'Pump'      : {'pin' : 7, 'state' : 'OFF'},
+    'PlantOne'  : {'pin' : 11, 'state' : 'OFF'},
+    'PlantTwo'  : {'pin' : 13, 'state' : 'OFF'},
+    'PlantThree': {'pin' : 15, 'state' : 'OFF'},   
+    'PlantFour' : {'pin' : 29, 'state' : 'OFF'},
+    'PlantFive' : {'pin' : 31, 'state' : 'OFF'},   
+    'PlantSix'  : {'pin' : 33, 'state' : 'OFF'},
+    'PlantSeven': {'pin' : 35, 'state' : 'OFF'},
+    'PlantEight': {'pin' : 37, 'state' : 'OFF'}
+   }
+deviceStateMap = {}
 
 GPIO.setmode(GPIO.BOARD)
 for device in gpioDeviceMap:
-    GPIO.setup(gpioDeviceMap[device], GPIO.OUT, initial=GPIO.HIGH)
+    GPIO.setup(gpioDeviceMap[device]['pin'], GPIO.OUT, initial=GPIO.HIGH)
 
-def gpio_ctrl(device, state):
-    if state == 'on':
-        print('Switching the Pump ON')
-        GPIO.output(gpioDeviceMap['Pump'], GPIO.LOW)
+def gpio_toggle(device):
+    if gpioDeviceMap[device]['state'] == 'OFF':
+        print('Switching the '+device+' ON')
+        GPIO.output(gpioDeviceMap['Pump']['pin'], GPIO.LOW)
         # Open the Relay
-        GPIO.output(gpioDeviceMap[device], GPIO.LOW)
-    elif state == 'off':
-        # Switching the Pump OFF
-        GPIO.output(gpioDeviceMap['Pump'], GPIO.HIGH)
+        GPIO.output(gpioDeviceMap[device]['pin'], GPIO.LOW)
+    elif gpioDeviceMap[device]['state'] == 'ON':
+        print('Switching the '+device+' OFF')
+        GPIO.output(gpioDeviceMap['Pump']['pin'], GPIO.HIGH)
         # Close the Relay<
-        GPIO.output(gpioDeviceMap[device], GPIO.HIGH)
+        GPIO.output(gpioDeviceMap[device]['pin'], GPIO.HIGH)
 
 def gpio_read():
-    #print(device)
     for device in gpioDeviceMap:
-        gpioState = GPIO.input(gpioDeviceMap[device])
+        gpioState = GPIO.input(gpioDeviceMap[device]['pin'])
         
         if gpioState == GPIO.LOW:
-             gpioDeviceState[device]='On'
+            gpioDeviceMap[device]['state']='ON'
         else:
-             gpioDeviceState[device]='Off'
-    
-    return gpioDeviceState
+             gpioDeviceMap[device]['state']='OFF'
+        deviceStateMap[device] = gpioDeviceMap[device]['state']
+    return deviceStateMap
 
 def gpio_cleanup():
     GPIO.cleanup()

@@ -1,63 +1,158 @@
 <!DOCTYPE html>
-  <head>
-    <title>Balcony Irrigation System</title>
-    <link rel="stylesheet" href="../static/style.css">
-  </head>
-  <body>
-    <h1>Balcony Irrigation System</h1>
-    <h2>Control</h2>
-    <div>
-	<h3>Plant One:
-      		<a href="/Watering/plantOne/on" class="button">TURN ON</a>
-      		<a href="/Watering/plantOne/off" class="button">TURN OFF</a>
-	</h3>
-    </div>
-    <div>
-	<h3>Plant Two:
-		<a href="/Watering/plantTwo/on" class="button">TURN ON</a>
-		<a href="/Watering/plantTwo/off" class="button">TURN OFF</a>
-	</h3>
-    </div>
-    <div>
-	<h3>Plant Three:
-		<a href="/Watering/plantThree/on" class="button">TURN ON</a>
-		<a href="/Watering/plantThree/off" class="button">TURN OFF</a>
-	</h3>
-    </div>
-    <div>
-	<h3>Plant Four:
-		<a href="/Watering/plantFour/on" class="button">TURN ON</a>
-		<a href="/Watering/plantFour/off" class="button">TURN OFF</a>
-	</h3>
-    </div>
-    <div>
-	<h3>Plant Five:
-		<a href="/Watering/plantFive/on" class="button">TURN ON</a>
-		<a href="/Watering/plantFive/off" class="button">TURN OFF</a>
-	</h3>
-    </div>
-    <div>
-	<h3>Plant Six:
-		<a href="/Watering/plantSix/on" class="button">TURN ON</a>
-		<a href="/Watering/plantSix/off" class="button">TURN OFF</a>
-	</h3>
-    </div>
-    <div>
-	<h3>Plant Seven:
-		<a href="/Watering/plantSeven/on" class="button">TURN ON</a>
-		<a href="/Watering/plantSeven/off" class="button">TURN OFF</a>
-	</h3>
-    </div>
-
-    <h2>Status</h2>
-    <h3>Plant One Status: {{ plantOne }}</h3>
-    <h3>Plant Two Status: {{ plantTwo }}</h3>
-    <h3>Plant Three Status: {{ plantThree }}</h3>
-    <h3>Plant Four Status: {{ plantFour }}</h3>
-    <h3>Plant Five Status: {{ plantFive }}</h3>
-    <h3>Plant Six Status: {{ plantSix }}</h3>
-    <h3>Plant Seven Status: {{ plantSeven }}</h3>
-    <h3>Pump Status: {{ Pump }}</h3>
-
-  </body>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+        <title>BringNatureInside</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='watering.css') }}">
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <h1>Balcony Irrigation System</h1>
+            </div>
+        </header>
+        <nav>
+            <div class="container">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/Watering/">Watering</a></li>
+                    <li><a href="#">Sensors</a></li>
+                    <li><a href="#">Weather</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="content">
+            <div class="container">
+                <div>
+                    <div class="plant">
+                        <h3>Plant One</h3>
+                        <label class="switch">
+                            <a href="/Watering/PlantOne/">
+                                {% if PlantOne == 'ON' %} 
+                                    <input type="checkbox" checked>
+                                {% else %} 
+                                    <input type="checkbox">
+                                {% endif %}
+                                <span class="slider"></span>
+                            </a>
+                        </label>
+                    </div>
+                    <div class="plant">
+                        <h3>Plant Two</h3>
+                        <label class="switch">
+                            <a href="/Watering/PlantTwo/">
+                                {% if PlantTwo == 'ON' %} 
+                                    <input type="checkbox" checked>
+                                {% else %} 
+                                    <input type="checkbox">
+                                {% endif %}
+                                <span class="slider"></span>
+                            </a>
+                        </label>
+                    </div>
+                    <div class="plant">
+                        <h3>Plant Three</h3>
+                        <label class="switch">
+                            <a href="/Watering/PlantThree/">
+                                {% if  PlantThree   == 'ON' %} 
+                                    <input type="checkbox" checked>
+                                {% else %} 
+                                    <input type="checkbox">
+                                {% endif %}
+                                <span class="slider"></span>
+                            </a>
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <div class="plant">
+                        <h3>Plant Four</h3>
+                        <label class="switch">
+                            <a href="/Watering/PlantFour/">
+                                {% if PlantFour == 'ON' %} 
+                                    <input type="checkbox" checked>
+                                {% else %} 
+                                    <input type="checkbox">
+                                {% endif %}
+                                <span class="slider"></span>
+                            </a>
+                        </label>
+                    </div>
+                    <div class="plant">
+                        <h3>Plant Five</h3>
+                        <label class="switch">
+                            <a href="/Watering/PlantFive/">
+                                {% if PlantFive == 'ON' %} 
+                                    <input type="checkbox" checked>
+                                {% else %} 
+                                    <input type="checkbox">
+                                {% endif %}
+                                <span class="slider"></span>
+                            </a>
+                        </label>
+                    </div>
+                    <div class="plant">
+                        <h3>Plant Six</h3>
+                        <label class="switch">
+                            <a href="/Watering/PlantSix/">
+                                {% if  PlantSix   == 'ON' %} 
+                                    <input type="checkbox" checked>
+                                {% else %} 
+                                    <input type="checkbox">
+                                {% endif %}
+                                <span class="slider"></span>
+                            </a>
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <div class="plant">
+                        <h3>Plant Seven</h3>
+                        <label class="switch">
+                            <a href="/Watering/PlantSeven/">
+                                {% if PlantSeven == 'ON' %} 
+                                    <input type="checkbox" checked>
+                                {% else %} 
+                                    <input type="checkbox">
+                                {% endif %}
+                                <span class="slider"></span>
+                            </a>
+                        </label>
+                    </div>
+                    <div class="plant">
+                        <h3>Plant Eight</h3>
+                        <label class="switch">
+                            <a href="/Watering/PlantEight/">
+                                {% if PlantEight == 'ON' %} 
+                                    <input type="checkbox" checked>
+                                {% else %} 
+                                    <input type="checkbox">
+                                {% endif %}
+                                <span class="slider"></span>
+                            </a>
+                        </label>
+                    </div>
+                    <div class="plant">
+                        <h3>Pump</h3>
+                        <label class="switch">
+                            <a href="/Watering/Pump/">
+                                {% if  Pump   == 'ON' %} 
+                                    <input type="checkbox" checked>
+                                {% else %} 
+                                    <input type="checkbox">
+                                {% endif %}
+                                <span class="slider"></span>
+                            </a>
+                        </label>
+                    </div>
+                </div>   
+            </div>
+        </div>
+        <footer id="main-footer">
+            <div class="container">
+                <p>Copyright &copy; 2020 BringNatureInside</p>
+            </div>
+        </footer>
+    </body>
 </html>

@@ -1,32 +1,26 @@
-from watering import gpio_ctrl,gpio_read
-from flask import Flask
+from watering import gpio_toggle,gpio_read
+from flask import Flask, request
 from flask import render_template
    
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    #return render_template('index.html')
-    return render_template('watering.html')
+    return render_template('index.html')
 
 @app.route("/Watering/")
 def watering():
-    return render_template('watering.html')
+    stateDict = gpio_read()
+    #print(stateDict)
+    return render_template('watering.html', **stateDict)
 
-@app.route("/Watering/<plantNumber>/<action>")
-def action(plantNumber, action):
-    gpio_ctrl(plantNumber,action)
-    print(plantNumber)
-    templateData = gpio_read()
-    print(templateData)
+@app.route("/Watering/<device>/")
+def action(device):
+    gpio_toggle(device)
 
-    #if status == 0:
-     #   templateData = {plantNumber:'On'}
-        #print(templateData)
-    #else:
-     #   templateData = {plantNumber:'Off'}
-
-    return render_template('watering.html', **templateData)
+    stateDict = gpio_read()
+    #print(stateDict)
+    return render_template('watering.html', **stateDict)
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+    app.run(debug=True, port=80, host='0.0.0.0')
