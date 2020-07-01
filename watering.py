@@ -6,14 +6,14 @@ import time
 
 gpioDeviceMap = {
     'Pump'      : {'pin' : 7, 'state' : 'OFF'},
-    'PlantOne'  : {'pin' : 11, 'state' : 'OFF'},
-    'PlantTwo'  : {'pin' : 13, 'state' : 'OFF'},
-    'PlantThree': {'pin' : 15, 'state' : 'OFF'},   
-    'PlantFour' : {'pin' : 29, 'state' : 'OFF'},
-    'PlantFive' : {'pin' : 31, 'state' : 'OFF'},   
-    'PlantSix'  : {'pin' : 33, 'state' : 'OFF'},
-    'PlantSeven': {'pin' : 35, 'state' : 'OFF'},
-    'PlantEight': {'pin' : 37, 'state' : 'OFF'}
+    'PlantOne'  : {'pin' : 12, 'state' : 'OFF'},
+    'PlantTwo'  : {'pin' : 16, 'state' : 'OFF'},
+    'PlantThree': {'pin' : 18, 'state' : 'OFF'},   
+    'PlantFour' : {'pin' : 22, 'state' : 'OFF'},
+    'PlantFive' : {'pin' : 32, 'state' : 'OFF'},   
+    'PlantSix'  : {'pin' : 36, 'state' : 'OFF'},
+    'PlantSeven': {'pin' : 38, 'state' : 'OFF'},
+    'PlantEight': {'pin' : 40, 'state' : 'OFF'}
    }
 deviceStateMap = {}
 
