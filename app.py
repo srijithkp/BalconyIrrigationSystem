@@ -8,6 +8,10 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
+@app.route('/invalid/')
+def invalid():
+    return render_template('invalid.html')
+
 @app.route("/Watering/")
 def watering():
     stateDict = gpio_read()
