@@ -62,37 +62,19 @@ nav a:hover{
     background-position: center;
     background-size: cover;
 }
-
-.button{
-    /* Layout*/
-    float:left;
-    overflow: hidden; /* overflown content will be invisible*/
-    padding: 50px;
+.box{
+    position:absolute;
+    top:75px;
+    left:450px;
+    transform: translate(-50%, -50%);
     margin: 150px 25px;
-    /*Border*/
+    padding: 40px 150px;
     border-radius: 25px;
     border: 3px solid #fff;
-    /* Font and Color */
-    color: #fff;
-    font-family: Times, Times New Roman, serif;
-    font-size: 25px;
-    text-align:center;
-    text-transform:capitalize;
     background: #206181;
-    /* Other */
-    cursor: pointer;
-    transition: all 0.4s;
+    color:#fff;
+    font-size:32px;
 }
-.button:hover {
-    background-color: #284b63;
-    /*color: #dda15e !important;*/
-    font-weight: 700 !important;
-    letter-spacing: 3px;
-    -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
-    -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
-    transition: all 0.3s ease 0s;
-}
-
 #main-footer{
     background: #206181;
     color: #fff;
@@ -102,6 +84,7 @@ nav a:hover{
     height: 70px;
     
 }
+
 @media(max-width:480px){
     .content{
         width:100%;
@@ -110,14 +93,6 @@ nav a:hover{
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;   
-    }
-    .button{
-        float:none;
-	margin:35px 70px 30px 70px;
-	padding: 25px;
-	min-width: 200px;
-	font-size: 20px;
-	text-transform: uppercase;
     }
     header{
    	height: 80px;
@@ -131,9 +106,16 @@ nav a:hover{
         padding:30px 0px 30px 98px;
         font-size: 28px;
     }
+    .box{
+   	top:190px;
+	left:160px;
+	margin:30px;
+        padding:10px 90px;
+        font-size:25px;
+	line-height: 1.5em;
+	}
     nav a{
     	padding-right: 10px;
 	font-size: 17px;	
     }
 }   
- 

@@ -16,33 +16,46 @@ gpioDeviceMap = {
     'PlantEight': {'pin' : 40, 'state' : 'OFF'}
    }
 deviceStateMap = {}
+relayOn = False
 
 GPIO.setmode(GPIO.BOARD)
 for device in gpioDeviceMap:
     GPIO.setup(gpioDeviceMap[device]['pin'], GPIO.OUT, initial=GPIO.HIGH)
 
 def gpio_toggle(device):
+    gpio_read()
     if gpioDeviceMap[device]['state'] == 'OFF':
         print('Switching the '+device+' ON')
-        GPIO.output(gpioDeviceMap['Pump']['pin'], GPIO.LOW)
+        #Switch ON The Pump
+        if gpioDeviceMap['Pump']['state'] == 'OFF':
+                GPIO.output(gpioDeviceMap['Pump']['pin'], GPIO.LOW)
         # Open the Relay
         GPIO.output(gpioDeviceMap[device]['pin'], GPIO.LOW)
     elif gpioDeviceMap[device]['state'] == 'ON':
         print('Switching the '+device+' OFF')
-        GPIO.output(gpioDeviceMap['Pump']['pin'], GPIO.HIGH)
-        # Close the Relay<
+        # Close the Relay
         GPIO.output(gpioDeviceMap[device]['pin'], GPIO.HIGH)
+        #Switch Off the Pump if no relays are Open
+        if getRelayTotalStatus() == False:
+            GPIO.output(gpioDeviceMap['Pump']['pin'], GPIO.HIGH)
 
 def gpio_read():
     for device in gpioDeviceMap:
-        gpioState = GPIO.input(gpioDeviceMap[device]['pin'])
-        
-        if gpioState == GPIO.LOW:
+        if GPIO.LOW == GPIO.input(gpioDeviceMap[device]['pin']):
             gpioDeviceMap[device]['state']='ON'
         else:
-             gpioDeviceMap[device]['state']='OFF'
+            gpioDeviceMap[device]['state']='OFF'
+        
         deviceStateMap[device] = gpioDeviceMap[device]['state']
     return deviceStateMap
+
+def getRelayTotalStatus():
+    relayOn = False
+    for device in gpioDeviceMap:
+        if device != 'Pump':
+            if GPIO.LOW == GPIO.input(gpioDeviceMap[device]['pin']):
+                relayOn = True
+    return relayOn
 
 def gpio_cleanup():
     GPIO.cleanup()
