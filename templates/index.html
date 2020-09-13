@@ -6,39 +6,24 @@
         <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='master.css') }}">
     </head>
     <body>
-        <header>
-            <div class="container">
-                <h1>Bring Nature Inside</h1>
-            </div>
-        </header>
         <nav>
-            <div class="container">
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/Watering/">Watering</a></li>
-                    <li><a href="/invalid/">Sensors</a></li>
-                    <li><a href="/invalid/">Weather</a></li>
-                    <li><a href="/invalid/">Contact</a></li>
-                </ul>
-            </div>
+            <ul>
+                <li><a class="menuActive" href="/">Home</a></li>
+                <li><a href="/Watering/">Watering</a></li>
+                <li><a href="/Sensors/">Sensors</a></li>
+                <li><a href="/Weather/">Weather</a></li>        
+            </ul>
         </nav>
-        <div class="content">
-            <div class="container">
-                <form action="/Watering/" target="_blank">
-                    <button class="button" type="submit">Watering</button>
-                </form>
-                <form action="/invalid/" target="_blank">
-                    <button class="button" type="submit">Sensors</button>
-                </form>
-                <form action="/invalid/" target="_blank">
-                    <button class="button" type="submit">Weather</button>
-                </form>
-            </div>
+        <div>
+            <form action="/invalid/" target="_blank">
+                <button class="button buttonTwo" type="submit">Sensors</button>
+            </form>
+              <form action="/Watering/" target="_blank">
+                <button class="button buttonOne" type="submit">Watering</button>
+            </form>                  
+            <form action="/invalid/" target="_blank">
+                <button class="button buttonThree" type="submit">Weather</button>
+            </form>    
         </div>
-        <footer id="main-footer">
-            <div class="container">
-                <p>Copyright &copy; 2020 BringNatureInside</p>
-            </div>
-        </footer>
     </body>
 </html>

@@ -5,15 +5,17 @@ import datetime
 import time
 
 gpioDeviceMap = {
-    'Pump'      : {'pin' : 7, 'state' : 'OFF'},
-    'PlantOne'  : {'pin' : 12, 'state' : 'OFF'},
-    'PlantTwo'  : {'pin' : 16, 'state' : 'OFF'},
-    'PlantThree': {'pin' : 18, 'state' : 'OFF'},   
-    'PlantFour' : {'pin' : 22, 'state' : 'OFF'},
-    'PlantFive' : {'pin' : 32, 'state' : 'OFF'},   
-    'PlantSix'  : {'pin' : 36, 'state' : 'OFF'},
-    'PlantSeven': {'pin' : 38, 'state' : 'OFF'},
-    'PlantEight': {'pin' : 40, 'state' : 'OFF'}
+    'LeftOne'   : {'pin' : 33, 'state' : 'OFF'},
+    'LeftTwo'   : {'pin' : 37, 'state' : 'OFF'},
+    'LeftThree' : {'pin' : 36, 'state' : 'OFF'},
+    'LeftFour'  : {'pin' : 32, 'state' : 'OFF'},
+    'RightOne'  : {'pin' : 10, 'state' : 'OFF'},
+    'RightTwo'  : {'pin' : 7, 'state' : 'OFF'},
+    'RightThree': {'pin' : 5, 'state' : 'OFF'},
+    'RightFour' : {'pin' : 16, 'state' : 'OFF'},
+    'CentreTop' : {'pin' : 12, 'state' : 'OFF'},    
+    'Pump'      : {'pin' : 3, 'state' : 'OFF'},
+    'Fountain'  : {'pin' : 31, 'state' : 'OFF'},    
    }
 deviceStateMap = {}
 relayOn = False

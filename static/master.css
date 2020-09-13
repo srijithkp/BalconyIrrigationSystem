@@ -1,139 +1,325 @@
+html{
+    height: 100%;
+    width: 100%;
+}
 body{
-    background-color: #fff;
     font-family: Times, Times New Roman, serif;
     font-size: 16px;
     line-height: 1.6em;
-    margin: 0;
-}
-
-header{
-    background-color:#354f52;
-    color:#fff;
-    height: 100px;
-    background-image: url("HeaderBackground.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-}
-header h1{
-    padding: 40px 100px;
-    margin: 0px;
-}
-.container{
-    width: 90%;
-    margin:auto;
-/*    overflow: hidden;*/
-}
-
-a{
-    text-decoration: none;  
-}
-nav{
-    background-color: #5C9DBD;
-    color: #fff;
-    height:40px;
-}
-
-nav ul{
-    padding: 0;
-    list-style: none;
-    margin: 0px;
-    padding:6px 0px;
-}
-nav li{
-    display:inline;
-}
-
-nav a{
-    color: white;
-    font-size: 18px;
-    padding-right: 20px;
-}
-nav a:hover{
-    color: #284b63;
-}
-
-.content{
-    position: relative;
-    height: 70vh;
-    width: 100%;
     background-image: url("BodyBackground.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 }
+nav{
+    position: relative;
+    top: 20vh;
+    background-color: #e4c0ac;
+    color: #fff;
+    width: 80%;
+    margin-left: 10%;
+}
+nav ul{
+    list-style: none;
+    padding:0%;
+}
+nav li{
+    display:inline;
+}
+nav a{
+    color: #61170e;
+    font-size: 18px;
+    padding-right: 5%;
+    font-weight: bold;
+    text-decoration: none;  
+}
+nav a:hover{
+    color: #fff;
+}
+.menuActive{
+    color: #fff;
+    font-size: 19px;
+}
+
 
 .button{
-    /* Layout*/
-    float:left;
-    overflow: hidden; /* overflown content will be invisible*/
-    padding: 50px;
-    margin: 150px 25px;
     /*Border*/
     border-radius: 25px;
-    border: 3px solid #fff;
+    border: 5px solid #fff;
     /* Font and Color */
     color: #fff;
-    font-family: Times, Times New Roman, serif;
+    font-family: Times, Times New Roman, serif;    
     font-size: 25px;
+    font-weight: bold;
     text-align:center;
-    text-transform:capitalize;
-    background: #206181;
+    background: #bf7a42;
     /* Other */
     cursor: pointer;
     transition: all 0.4s;
 }
+.buttonOne{
+    position:absolute;
+    top: 40vh;
+    left: 14%;
+    padding: 8%;
+}
+.buttonTwo{
+    position:absolute;
+    top: 38vh;
+    left: 45%;
+    padding: 3% 10%;
+}
+.buttonThree{
+    position:absolute;
+    top: 60vh;
+    left: 45%;
+    padding: 3% 10%;
+}   
+    
 .button:hover {
-    background-color: #284b63;
-    /*color: #dda15e !important;*/
+    background-color: #61170e;
+    color: #fff;
     font-weight: 700 !important;
     letter-spacing: 3px;
     -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
     -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
     transition: all 0.3s ease 0s;
 }
-
-#main-footer{
-    background: #206181;
+.plant{
+    float: left;
+    border-radius: 25px;
+    border: 3px solid #fff;
     color: #fff;
+    background: #bf7a42;
+    width: 8%;
     text-align: center;
-    position: fixed;
-    width: 100%;
-    height: 70px;
-    
+    padding: 1%;
 }
-@media(max-width:480px){
-    .content{
-        width:100%;
-        height: 72vh;
-        background-image: url("MobileBackground.jpg");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;   
-    }
-    .button{
-        float:none;
-	margin:35px 70px 30px 70px;
-	padding: 25px;
-	min-width: 200px;
-	font-size: 20px;
-	text-transform: uppercase;
-    }
-    header{
-   	height: 80px;
-        background-image: url("MobileHeader.jpg");
-    	background-repeat: no-repeat;
-    	background-position: center;
-    	background-size: cover;
-    }
+.plant h3{
+    margin: 0%;
+    padding: 5%;
+    text-align: center;
+    font-size: 17px;   
+}
+.LeftOne{
+    position:absolute;
+    top: 30vh;
+    left: 10%;
+}
+.LeftTwo{
+    position:absolute;
+    top:50vh;
+    left: 10%;
+}
+.LeftThree{
+    position:absolute;
+    top: 70vh;
+    left: 10%;
+}
+.LeftFour{
+    position:absolute;
+    top: 70vh;
+    left: 25%;
+}
+.RightOne{
+    position:absolute;
+    top: 30vh;
+    left: 70%;
+}
+.RightTwo{
+    position:absolute;
+    top: 50vh;
+    left: 70%;
+}
+.RightThree{
+    position:absolute;
+    top: 70vh;
+    left: 70%;
+}
+.RightFour{
+    position:absolute;
+    top: 70vh;
+    left: 55%;
+}
+.CentreTop{
+    position:absolute;
+    top: 30vh;
+    left: 40%;
+}
+.Pump{
+    position:absolute;
+    top: 70vh;
+    left: 40%;
+}
+.Fountain{
+    position:absolute;
+    top: 50vh;
+    left: 40%;
+}
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 27px;
+}
 
-    header h1{
-        padding:30px 0px 30px 98px;
-        font-size: 28px;
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 60px;
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 21px;
+  width: 21px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #405d27;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(21px);
+  -ms-transform: translateX(21px);
+  transform: translateX(21px);
+}
+.box{
+    position:absolute;
+    top:45vh;
+    left:25%;
+    padding: 3% 15%;
+    border-radius: 25px;
+    border: 3px solid #fff;
+    background: #bf7a42;
+    color:#fff;
+    font-size:32px;
+    text-align: center;
+}
+
+@media(max-width:480px){
+    
+    body {
+        background-image: url("MobileBackground.jpg");
+    }
+    nav{
+        top: 11vh;
+        margin-left: 7%;
     }
     nav a{
-    	padding-right: 10px;
-	font-size: 17px;	
+    	padding-right: 3%;
+	    font-size: 15px;	
     }
+    .button{
+        font-size: 20px;
+        width: 53%;
+    }
+    .buttonOne{
+        top: 25vh;
+        left: 20%;
+        padding: 7% 14%;
+    }
+    .buttonTwo{
+        top: 48vh;
+        left: 20%;
+        padding: 7% 14%;
+    }
+    .buttonThree{
+        top: 72vh;
+        left: 20%;
+        padding: 7% 14%;
+    }   
+    .plant{
+	    padding:3%;
+        width: 13%;
+    }
+    .plant h3{
+        font-size: 15px;  
+    }
+    .box{
+        top:43vh;
+        left:10%;
+        font-size:20px;
+        padding: 8% 17%;
+    }
+    .LeftOne{
+        position:absolute;
+        top: 20vh;
+        left: 7%;
+    }
+    .LeftTwo{
+        position:absolute;
+        top: 40vh;
+        left: 7%;
+    }
+    .LeftThree{
+        position:absolute;
+        top: 60vh;
+        left: 7%;
+    }
+    .LeftFour{
+        position:absolute;
+        top: 80vh;
+        left: 22%;
+    }
+    .RightOne{
+        position:absolute;
+        top: 20vh;
+        left: 70%;
+    }
+    .RightTwo{
+        position:absolute;
+        top: 40vh;
+        left: 70%;
+    }
+    .RightThree{
+        position:absolute;
+        top: 60vh;
+        left: 70%;
+    }
+    .RightFour{
+        position:absolute;
+        top: 80vh;
+        left: 57%;
+    }
+    .CentreTop{
+        position:absolute;
+        top: 20vh;
+        left: 38%;
+    }
+    .Pump{
+        position:absolute;
+        top: 40vh;
+        left: 35%;
+        width: 20%;
+        height: 13%;
+    }
+    .Fountain{
+        position:absolute;
+        top: 60vh;
+        left: 35%;
+        width: 20%;
+        height: 13%;       
+    }    
 }   
+
  

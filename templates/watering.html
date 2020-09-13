@@ -3,156 +3,161 @@
     <head>
         <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
         <title>BringNatureInside</title>
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='watering.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='master.css') }}">
     </head>
     <body>
-        <header>
-            <div class="container">
-                <h1>Bring Nature Inside</h1>
-            </div>
-        </header>
         <nav>
-            <div class="container">
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/Watering/">Watering</a></li>
-                    <li><a href="/invalid/">Sensors</a></li>
-                    <li><a href="/invalid/">Weather</a></li>
-                    <li><a href="/invalid/">Contact</a></li>
-                </ul>
-            </div>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a class="menuActive" href="/Watering/">Watering</a></li>
+                <li><a href="/Sensors/">Sensors</a></li>
+                <li><a href="/Weather/">Weather</a></li>        
+            </ul>
         </nav>
-        <div class="content">
-            <div class="container">
-                <div class="plantgroup">
-                    <div class="plant">
-                        <h3>Plant One</h3>
-                        <label class="switch">
-                            <a href="/Watering/PlantOne/">
-                                {% if PlantOne == 'ON' %} 
-                                    <input type="checkbox" checked>
-                                {% else %} 
-                                    <input type="checkbox">
-                                {% endif %}
-                                <span class="slider"></span>
-                            </a>
-                        </label>
-                    </div>
-                    <div class="plant">
-                        <h3>Plant Two</h3>
-                        <label class="switch">
-                            <a href="/Watering/PlantTwo/">
-                                {% if PlantTwo == 'ON' %} 
-                                    <input type="checkbox" checked>
-                                {% else %} 
-                                    <input type="checkbox">
-                                {% endif %}
-                                <span class="slider"></span>
-                            </a>
-                        </label>
-                    </div>
-                    <div class="plant">
-                        <h3>Plant Three</h3>
-                        <label class="switch">
-                            <a href="/Watering/PlantThree/">
-                                {% if  PlantThree   == 'ON' %} 
-                                    <input type="checkbox" checked>
-                                {% else %} 
-                                    <input type="checkbox">
-                                {% endif %}
-                                <span class="slider"></span>
-                            </a>
-                        </label>
-                    </div>
-                </div>
-                <div class="plantgroup">
-                    <div class="plant">
-                        <h3>Plant Four</h3>
-                        <label class="switch">
-                            <a href="/Watering/PlantFour/">
-                                {% if PlantFour == 'ON' %} 
-                                    <input type="checkbox" checked>
-                                {% else %} 
-                                    <input type="checkbox">
-                                {% endif %}
-                                <span class="slider"></span>
-                            </a>
-                        </label>
-                    </div>
-                    <div class="plant">
-                        <h3>Plant Five</h3>
-                        <label class="switch">
-                            <a href="/Watering/PlantFive/">
-                                {% if PlantFive == 'ON' %} 
-                                    <input type="checkbox" checked>
-                                {% else %} 
-                                    <input type="checkbox">
-                                {% endif %}
-                                <span class="slider"></span>
-                            </a>
-                        </label>
-                    </div>
-                    <div class="plant">
-                        <h3>Plant Six</h3>
-                        <label class="switch">
-                            <a href="/Watering/PlantSix/">
-                                {% if  PlantSix   == 'ON' %} 
-                                    <input type="checkbox" checked>
-                                {% else %} 
-                                    <input type="checkbox">
-                                {% endif %}
-                                <span class="slider"></span>
-                            </a>
-                        </label>
-                    </div>
-                </div>
-                <div class="plantgroup">
-                    <div class="plant">
-                        <h3>Plant Seven</h3>
-                        <label class="switch">
-                            <a href="/Watering/PlantSeven/">
-                                {% if PlantSeven == 'ON' %} 
-                                    <input type="checkbox" checked>
-                                {% else %} 
-                                    <input type="checkbox">
-                                {% endif %}
-                                <span class="slider"></span>
-                            </a>
-                        </label>
-                    </div>
-                    <div class="plant">
-                        <h3>Plant Eight</h3>
-                        <label class="switch">
-                            <a href="/Watering/PlantEight/">
-                                {% if PlantEight == 'ON' %} 
-                                    <input type="checkbox" checked>
-                                {% else %} 
-                                    <input type="checkbox">
-                                {% endif %}
-                                <span class="slider"></span>
-                            </a>
-                        </label>
-                    </div>
-                    <div class="plant">
-                        <h3>Pump</h3>
-                        <label class="switch">
-                            <a href="/Watering/Pump/">
-                                {% if  Pump   == 'ON' %} 
-                                    <input type="checkbox" checked>
-                                {% else %} 
-                                    <input type="checkbox">
-                                {% endif %}
-                                <span class="slider"></span>
-                            </a>
-                        </label>
-                    </div>
-                </div>   
+        <div>
+            <div class="plant LeftOne">
+                <h3>Left One</h3>
+                <label class="switch">
+                    <a href="/Watering/LeftOne/">
+                        {% if LeftOne == 'ON' %} 
+                            <input type="checkbox" checked>
+                        {% else %} 
+                            <input type="checkbox">
+                        {% endif %}
+                        <span class="slider"></span>
+                    </a>
+                </label>
             </div>
+            <div class="plant LeftTwo">
+                <h3>Left Two</h3>
+                <label class="switch">
+                    <a href="/Watering/LeftTwo/">
+                        {% if LeftTwo == 'ON' %} 
+                            <input type="checkbox" checked>
+                        {% else %} 
+                            <input type="checkbox">
+                        {% endif %}
+                        <span class="slider"></span>
+                    </a>
+                </label>
+            </div>
+            <div class="plant LeftThree">
+                <h3>Left Three</h3>
+                <label class="switch">
+                    <a href="/Watering/LeftThree/">
+                        {% if  LeftThree == 'ON' %} 
+                            <input type="checkbox" checked>
+                        {% else %} 
+                            <input type="checkbox">
+                        {% endif %}
+                        <span class="slider"></span>
+                    </a>
+                </label>
+            </div>
+             <div class="plant LeftFour">
+                <h3>Left Four</h3>
+                <label class="switch">
+                    <a href="/Watering/LeftFour/">
+                        {% if LeftFour == 'ON' %} 
+                            <input type="checkbox" checked>
+                        {% else %} 
+                            <input type="checkbox">
+                        {% endif %}
+                        <span class="slider"></span>
+                    </a>
+                </label>
+            </div>               
+            <div class="plant RightOne">
+                <h3>Right One</h3>
+                <label class="switch">
+                    <a href="/Watering/RightOne/">
+                        {% if RightOne == 'ON' %} 
+                            <input type="checkbox" checked>
+                        {% else %} 
+                            <input type="checkbox">
+                        {% endif %}
+                        <span class="slider"></span>
+                    </a>
+                </label>
+            </div>       
+            <div class="plant RightTwo">
+                <h3>Right Two</h3>
+                <label class="switch">
+                    <a href="/Watering/RightTwo/">
+                        {% if RightTwo == 'ON' %} 
+                            <input type="checkbox" checked>
+                        {% else %} 
+                            <input type="checkbox">
+                        {% endif %}
+                        <span class="slider"></span>
+                    </a>
+                </label>
+            </div>
+            <div class="plant RightThree">
+                <h3>Right Three</h3>
+                <label class="switch">
+                    <a href="/Watering/RightThree/">
+                        {% if RightThree == 'ON' %} 
+                            <input type="checkbox" checked>
+                        {% else %} 
+                            <input type="checkbox">
+                        {% endif %}
+                        <span class="slider"></span>
+                    </a>
+                </label>
+            </div>
+            <div class="plant RightFour">
+                <h3>Right Four</h3>
+                <label class="switch">
+                    <a href="/Watering/RightFour/">
+                        {% if RightFour == 'ON' %} 
+                            <input type="checkbox" checked>
+                        {% else %} 
+                            <input type="checkbox">
+                        {% endif %}
+                        <span class="slider"></span>
+                    </a>
+                </label>
+            </div>
+            <div class="plant CentreTop">
+                <h3>Centre Top</h3>
+                <label class="switch">
+                    <a href="/Watering/CentreTop/">
+                        {% if CentreTop == 'ON' %} 
+                            <input type="checkbox" checked>
+                        {% else %} 
+                            <input type="checkbox">
+                        {% endif %}
+                        <span class="slider"></span>
+                    </a>
+                </label>
+            </div>
+            <div class="plant Pump">
+                <h3>Pump</h3>
+                <label class="switch">
+                    <a href="/Watering/Pump/">
+                        {% if  Pump == 'ON' %} 
+                            <input type="checkbox" checked>
+                        {% else %} 
+                            <input type="checkbox">
+                        {% endif %}
+                        <span class="slider"></span>
+                    </a>
+                </label>
+            </div>
+            <div class="plant Fountain">
+                <h3>Fount.</h3>
+                <label class="switch">
+                    <a href="/Watering/Fountain/">
+                        {% if Fountain == 'ON' %} 
+                            <input type="checkbox" checked>
+                        {% else %} 
+                            <input type="checkbox">
+                        {% endif %}
+                        <span class="slider"></span>
+                    </a>
+                </label>
+            </div>         
         </div>
-        <footer id="main-footer">
-            <div class="container">
-                <p>Copyright &copy; 2020 BringNatureInside</p>
-            </div>
-        </footer>
     </body>
 </html>

@@ -8,10 +8,6 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/invalid/')
-def invalid():
-    return render_template('invalid.html')
-
 @app.route("/Watering/")
 def watering():
     stateDict = gpio_read()
@@ -25,6 +21,14 @@ def action(device):
     stateDict = gpio_read()
     #print(stateDict)
     return render_template('watering.html', **stateDict)
+
+@app.route('/Sensors/')
+def sensors():
+    return render_template('sensors.html')
+
+@app.route('/Weather/')
+def weather():
+    return render_template('weather.html')
 
 if __name__ == '__main__':
     app.run(debug=True, port=80, host='0.0.0.0')
