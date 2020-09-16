@@ -1,4 +1,4 @@
-from watering import gpio_toggle,gpio_read
+from watering import cntrlValve,getCurrValveState
 from flask import Flask, request
 from flask import render_template
    
@@ -10,17 +10,16 @@ def index():
 
 @app.route("/Watering/")
 def watering():
-    stateDict = gpio_read()
-    #print(stateDict)
-    return render_template('watering.html', **stateDict)
+    valveState = getCurrValveState()
+    #print(valveState)
+    return render_template('watering.html', **valveState)
 
-@app.route("/Watering/<device>/")
-def action(device):
-    gpio_toggle(device)
-
-    stateDict = gpio_read()
-    #print(stateDict)
-    return render_template('watering.html', **stateDict)
+@app.route("/Watering/<valve>/")
+def action(valve):
+    cntrlValve(valve)
+    valveState = getCurrValveState()
+    #print(valveState)
+    return render_template('watering.html', **valveState)
 
 @app.route('/Sensors/')
 def sensors():
