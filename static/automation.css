@@ -1,0 +1,177 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: Times, Times New Roman, serif;
+  font-size: 16px;
+  line-height: 1.5em;
+  background-image: url("BodyBackground.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+nav {
+  position: fixed;
+  top: 22vh;
+  background-color: #fff;
+  color: #fff;
+  width: 70%;
+  margin-left: 10%;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0%;
+  margin: 0%
+}
+
+nav li {
+  display: inline;
+}
+
+nav a {
+  color: #61170e;
+  font-size: 18px;
+  padding-right: 5%;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #405d27;
+}
+
+.menuActive {
+  color: #405d27;
+  font-size: 19px;
+}
+
+h3 {
+  padding: 1%;
+  margin: 1%;
+  text-transform: uppercase;
+}
+
+.autoBox {
+  position: relative;
+  top: 30vh;
+  left: 10%;
+  width: 80%;
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.autoBox span {
+  color: #405d27;
+  float: right
+}
+
+.autoSubBox {
+  display: flex;
+  flex-flow: column;
+  padding: 1%;
+  margin: 1% 7%;
+  border-radius: 25px;
+  border: 2px solid #fff;
+  background: #e4c0ac;
+  color: #61170e;
+  text-align: center;
+  box-shadow: 0 17px 10px -10px rgba(0, 0, 0, 0.4);
+}
+
+.autoSubBoxTable {
+  display: flex;
+  flex-flow: row;
+  text-align: left;
+}
+
+.autoSubBoxColumn {
+  margin: 1px 10px;
+}
+
+.autoSubBoxColumn input {
+  float: right;
+  width: 3em;
+}
+
+.action {
+  float: left;
+  margin: 0% 3% 5% 15%;
+  border-radius: 7px;
+  border: 2px solid #fff;
+  cursor: pointer;
+  transition: all 0.4s;
+  font-size: 16px;
+  padding: 2% 6%;
+  font-family: Times, Times New Roman, serif;
+  font-weight: bold;
+  color: #fff;
+  box-shadow: 0 17px 10px -10px rgba(0, 0, 0, 0.4);
+}
+
+.actionReset {
+  background: #aa4a30;
+}
+
+.actionRun {
+  background: #405d27;
+}
+
+@media(max-width:480px) {
+  body {
+    background-image: url("MobileBackground.jpg");
+  }
+
+  nav {
+    top: 13%;
+    margin-left: 7%;
+  }
+
+  nav a {
+    padding-right: 3%;
+    font-size: 13px;
+  }
+
+  .menuActive {
+    font-size: 15px;
+  }
+
+  h3 {
+    padding: 1%;
+    margin: 1%;
+    font-size: 14px;
+  }
+
+  h4 {
+    margin: 5px;
+    font-size: 13px;
+  }
+
+  .autoBox {
+    top: 16vh;
+    left: 1%;
+    width: 90%;
+    flex-flow: column;
+    justify-content: center;
+  }
+
+  .autoSubBoxColumn {
+    margin: 0px 1px;
+  }
+
+  .autoSubBoxColumn input {
+    width: 2em;
+  }
+
+  .action {
+    float: left;
+    margin: 2% 3% 5% 13%;
+    -webkit-appearance: button;
+  }
+}

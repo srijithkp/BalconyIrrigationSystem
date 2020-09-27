@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+  <title>BringNatureInside</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='automation.css') }}">
+
+  <!-- <script language="Javascript">
+    function validateForm() {
+      var elements = document.getElementById("manualForm").elements;
+      alert("value")
+      for (var i = 0, element; element = elements[i++];) {
+          alert(element.value)
+          if (element.value == 8)
+      }
+    }
+  </script> -->
+  <script language="Javascript">
+  function validateForm() {
+    var inputs = document.querySelectorAll('input');
+    for (var i = 0; i < inputs.length; i++)
+    {
+      if ((inputs[i].value == "") || (inputs[i].value < 0)) {
+        alert("Invalid Entry");
+        return false;
+      }
+    }
+  }
+  </script>
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/Watering/">Watering</a></li>
+      <li><a class="menuActive" href="/Automation/">Automation</a></li>
+      <li><a href="/Weather/">Weather</a></li>
+    </ul>
+  </nav>
+  <div class="autoBox">
+    <div class="autoSubBox">
+      <h3>Average</h3>
+      <div class = "autoSubBoxTable autoSubBoxTableAvg">
+        <div class="autoSubBoxColumn">
+          <h4>Left One:<span>{{ leftoneavg }} s</span></h4>
+          <h4>Left Two:<span>{{ lefttwoavg }} s </span></h4>
+          <h4>Left Three:&nbsp<span>{{ leftthreeavg }} s </span></h4>
+          <h4>Left Four:<span>{{ leftfouravg }} s </span></h4>
+          <h4>Centre Top:&nbsp<span>{{ centretopavg }} s </span></h4>
+        </div>
+        <div class="autoSubBoxColumn">
+          <h4>Right One:<span>{{ rightoneavg }} s</span></h4>
+          <h4>Right Two:<span>{{ righttwoavg }} s</span></h4>
+          <h4>Right Three:&nbsp<span>{{ rightthreeavg }} s</span></h4>
+          <h4>Right Four:<span>{{ rightfouravg }} s</span></h4>
+        </div>
+      </div>
+      <div>
+        <form action="/Automation/AutomationResetAvg/" target="_blank">
+          <button class="action actionReset" type="submit">Reset</button>
+        </form>
+        <form action="/Automation/AutomationRunAvg/" target="_blank">
+          <button class="action actionRun" type="submit">Run</button>
+        </form>
+      </div>
+    </div>
+    <div class="autoSubBox">
+      <h3>Manual</h3>
+        <form name="manualForm" onsubmit="return validateForm()">
+          <div class = "autoSubBoxTable">
+            <div class="autoSubBoxColumn">
+              <h4>
+                <label for="leftoneman">Left One:</label>
+                <input type="number" id="leftoneman" name="leftoneman" value={{ leftoneman }} >
+              </h4>
+              <h4>
+                <label for="lefttwoman">Left Two:</label>
+                <input type="number" id="lefttwoman" name="lefttwoman" value={{ lefttwoman }}>
+              </h4>
+              <h4>
+                <label for="leftthreeman">Left Three:&nbsp</label>
+                <input type="number" id="leftthreeman" name="leftthreeman" value={{ leftthreeman }} &nbsp>
+              </h4>
+              <h4>
+                <label for="leftfourman">Left Four:</label>
+                <input type="number" id="leftfourman" name="leftfourman" value={{ leftfourman }}>
+              </h4>
+              <h4>
+                <label for="centretopman">Centre Top:&nbsp</label>
+                <input type="number" id="centretopman" name="centretopman" value={{ centretopman }}>
+              </h4>
+            </div>
+            <div class="autoSubBoxColumn">
+              <h4>
+                <label for="rightoneman">Right One:</label>
+                <input type="number" id="rightoneman" name="rightoneman" value={{ rightoneman }}>
+              </h4>
+              <h4>
+                <label for="righttwoman">Right Two:</label>
+                <input type="number" id="righttwoman" name="righttwoman" value={{ righttwoman }}>
+              </h4>
+              <h4>
+                <label for="rightthreeman">Right Three:&nbsp</label>
+                <input type="number" id="rightthreeman" name="rightthreeman" value={{ rightthreeman }}>
+              </h4>
+              <h4>
+                <label for="rightfourman">Right Four:</label>
+                <input type="number" id="rightfourman" name="rightfourman" value={{ rightfourman }}>
+              </h4>
+            </div>
+          </div>
+          <div>
+            <input type="submit" value="Update" class="action actionReset" formaction="/Automation/AutomationUpdtManual/">
+          </form>
+            <form action="/Automation/AutomationRunManual/" target="_blank">
+              <button class="action actionRun" type="submit">Run</button>
+            </form>
+          </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

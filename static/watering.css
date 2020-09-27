@@ -1,0 +1,283 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: Times, Times New Roman, serif;
+  font-size: 16px;
+  line-height: 1.5em;
+  background-image: url("BodyBackground.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+nav {
+  position: fixed;
+  top: 22vh;
+  background-color: #fff;
+  color: #fff;
+  width: 70%;
+  margin-left: 10%;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0%;
+  margin:0%
+}
+
+nav li {
+  display: inline;
+}
+
+nav a {
+  color: #61170e;
+  font-size: 18px;
+  padding-right: 5%;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #405d27;
+}
+
+.menuActive {
+  color: #405d27;
+  font-size: 19px;
+}
+
+.plant {
+  float: left;
+  border-radius: 25px;
+  border: 2px solid #fff;
+  color: #61170e;
+  background: #e4c0ac;
+  width: 8%;
+  text-align: center;
+  padding: 1%;
+  box-shadow: 0 17px 10px -10px rgba(0, 0, 0, 0.4);
+}
+
+.plant h3 {
+  margin: 0%;
+  padding: 5%;
+  text-align: center;
+  font-size: 17px;
+}
+
+.LeftOne {
+  position: absolute;
+  top: 30vh;
+  left: 10%;
+}
+
+.LeftTwo {
+  position: absolute;
+  top: 50vh;
+  left: 10%;
+}
+
+.LeftThree {
+  position: absolute;
+  top: 70vh;
+  left: 10%;
+}
+
+.LeftFour {
+  position: absolute;
+  top: 70vh;
+  left: 25%;
+}
+
+.RightOne {
+  position: absolute;
+  top: 30vh;
+  left: 70%;
+}
+
+.RightTwo {
+  position: absolute;
+  top: 50vh;
+  left: 70%;
+}
+
+.RightThree {
+  position: absolute;
+  top: 70vh;
+  left: 70%;
+}
+
+.RightFour {
+  position: absolute;
+  top: 70vh;
+  left: 55%;
+}
+
+.CentreTop {
+  position: absolute;
+  top: 30vh;
+  left: 40%;
+}
+
+.Pump {
+  position: absolute;
+  top: 70vh;
+  left: 40%;
+}
+
+.Fountain {
+  position: absolute;
+  top: 50vh;
+  left: 40%;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 27px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 60px;
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 21px;
+  width: 21px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+input:checked+.slider {
+  background-color: #405d27;
+}
+
+input:checked+.slider:before {
+  -webkit-transform: translateX(21px);
+  -ms-transform: translateX(21px);
+  transform: translateX(21px);
+}
+
+@media(max-width:480px) {
+  body {
+    background-image: url("MobileBackground.jpg");
+  }
+
+  nav {
+    top: 13%;
+    margin-left: 7%;
+  }
+
+  nav a {
+    padding-right: 3%;
+    font-size: 13px;
+  }
+
+  .menuActive {
+    font-size: 15px;
+  }
+
+  .plant {
+    padding: 3%;
+    width: 13%;
+  }
+
+  .plant h3 {
+    font-size: 15px;
+  }
+
+  .LeftOne {
+    position: absolute;
+    top: 20%;
+    left: 7%;
+  }
+
+  .LeftTwo {
+    position: absolute;
+    top: 40%;
+    left: 7%;
+  }
+
+  .LeftThree {
+    position: absolute;
+    top: 60%;
+    left: 7%;
+  }
+
+  .LeftFour {
+    position: absolute;
+    top: 80%;
+    left: 22%;
+  }
+
+  .RightOne {
+    position: absolute;
+    top: 20%;
+    left: 70%;
+  }
+
+  .RightTwo {
+    position: absolute;
+    top: 40%;
+    left: 70%;
+  }
+
+  .RightThree {
+    position: absolute;
+    top: 60%;
+    left: 70%;
+  }
+
+  .RightFour {
+    position: absolute;
+    top: 80%;
+    left: 57%;
+  }
+
+  .CentreTop {
+    position: absolute;
+    top: 20%;
+    left: 38%;
+  }
+
+  .Pump {
+    position: absolute;
+    top: 40%;
+    left: 35%;
+    width: 20%;
+    height: 13%;
+  }
+
+  .Fountain {
+    position: absolute;
+    top: 60%;
+    left: 35%;
+    width: 20%;
+    height: 13%;
+  }
+}

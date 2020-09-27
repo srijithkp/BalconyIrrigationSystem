@@ -1,0 +1,136 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: Times, Times New Roman, serif;
+  font-size: 16px;
+  line-height: 1.5em;
+  background-image: url("BodyBackground.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+nav {
+  position: fixed;
+  top: 22vh;
+  background-color: #fff;
+  color: #fff;
+  width: 70%;
+  margin-left: 10%;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0%;
+  margin:0%
+}
+
+nav li {
+  display: inline;
+}
+
+nav a {
+  color: #61170e;
+  font-size: 18px;
+  padding-right: 5%;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #405d27;
+}
+
+.menuActive {
+  color: #405d27;
+  font-size: 19px;
+}
+
+.button {
+  /*Border*/
+  border-radius: 25px;
+  border: 2px solid #fff;
+  /* Font and Color */
+  color: #61170e;
+  font-family: Times, Times New Roman, serif;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  background: #e4c0ac;
+  /* Other */
+  box-shadow: 0  17px 10px -10px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  transition: all ease-in-out 300ms;
+}
+
+.buttonOne {
+  position: absolute;
+  top: 40vh;
+  left: 14%;
+  padding: 8%;
+}
+
+.buttonTwo {
+  position: absolute;
+  top: 38vh;
+  left: 45%;
+  padding: 3% 10%;
+}
+
+.buttonThree {
+  position: absolute;
+  top: 60vh;
+  left: 45%;
+  padding: 3% 11.5%;
+}
+
+.button:hover {
+   box-shadow: 0  37px 20px -20px rgba(0, 0, 0, 0.2);
+   transform: translate(0, -10px)
+}
+
+@media(max-width:480px) {
+  body {
+    background-image: url("MobileBackground.jpg");
+  }
+
+  nav {
+    top: 13%;
+    margin-left: 7%;
+  }
+
+  nav a {
+    padding-right: 3%;
+    font-size: 13px;
+  }
+
+  .menuActive {
+    font-size: 15px;
+  }
+  .button {
+    font-size: 20px;
+    width: 53%;
+  }
+
+  .buttonOne {
+    top: 25%;
+    left: 20%;
+    padding: 7% 14%;
+  }
+
+  .buttonTwo {
+    top: 50%;
+    left: 20%;
+    padding: 7% 14%;
+  }
+
+  .buttonThree {
+    top: 75%;
+    left: 20%;
+    padding: 7% 14%;
+  }
+}
