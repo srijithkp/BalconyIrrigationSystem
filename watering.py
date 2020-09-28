@@ -5,6 +5,7 @@ import configparser
 import datetime
 from automation import getAutomationData
 from flask import render_template
+import logging
 
 ######### Common #########
 GPIO.setmode(GPIO.BOARD)
@@ -40,11 +41,13 @@ def cntrlValve(valve):
         setValveOff(valve)
 
 def setValveOn(valve):
-    print('Switching the ' + valve + ' ON')
+    print('Switching the valve: ' + valve + ' to ON state')
     # Open the Relay
     GPIO.output(valvePinMap[valve], GPIO.LOW)
     valveState[valve] = 'ON'
     valveOnTime[valve] = datetime.datetime.now()
+    logging.basicConfig(filename='activitiy.log', level=logging.INFO, format='%(asctime)s %(message)s')
+    logging.info('Switching the %s to ON state', valve)
     # print(valveOnTime[valve])
     # Switch ON The Pump
     if valveState['pump'] == 'OFF':
@@ -56,6 +59,8 @@ def setValveOff(valve):
     GPIO.output(valvePinMap[valve], GPIO.HIGH)
     valveState[valve] = 'OFF'
     valveOnDuration[valve] = datetime.datetime.now() - valveOnTime[valve]
+    logging.basicConfig(filename='activitiy.log', level=logging.INFO, format='%(asctime)s %(message)s')
+    logging.info('Switching the valve: %s to OFF state; On Duration: %s', valve, valveOnDuration[valve])
     # Save average duration for automation
     saveAverageDuration(valve)
     # Switch Off the Pump if no relays are Open
@@ -98,13 +103,17 @@ def runAutomatedWatering(type):
     valveConfigDuration = {}
     config.read('config.ini')
     if type == 'Average':
+        logging.basicConfig(filename='activitiy.log', level=logging.INFO, format='%(asctime)s %(message)s')
+        logging.info('Starting Automated watering with Average values')
         for valve in config.options('WATERING_DURATION_AVG'):
             valveConfigDuration[valve] = config.getint('WATERING_DURATION_AVG', valve)
     elif type == 'Manual':
+        logging.basicConfig(filename='activitiy.log', level=logging.INFO, format='%(asctime)s %(message)s')
+        logging.info('Starting Automated watering with Manual values')
         for valve in config.options('WATERING_DURATION_MANUAL'):
             valveConfigDuration[valve[:-3]] = config.getint('WATERING_DURATION_MANUAL', valve)
 
-    print(valveConfigDuration)
+    #print(valveConfigDuration)
     for key in valveConfigDuration:
         valveCurrOnDuration = 0
         valveOnTime = datetime.datetime.now()
@@ -114,7 +123,7 @@ def runAutomatedWatering(type):
             #print(f'{key}: {valveCurrOnDuration}')
         else:
             setValveOff(key)
-    print(valveConfigDuration)
+    #print(valveConfigDuration)
 
     # setValveOn()
     # setValveOff()

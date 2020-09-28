@@ -2,16 +2,22 @@ from watering import cntrlValve, getCurrValveState, runAutomatedWatering
 from automation import getAutomationData, resetAvgDurationValues, updtManualDurationValues
 from flask import Flask, request
 from flask import render_template
+from flask import request
+import logging
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
+    logging.basicConfig(filename='activitiy.log', level=logging.INFO, format='%(asctime)s %(message)s')
+    logging.info('Access to Page Home requested from IP: %s',request.remote_addr)
     return render_template('index.html')
 
 
 @app.route("/Watering/")
 def watering():
+    logging.basicConfig(filename='activitiy.log', level=logging.INFO, format='%(asctime)s %(message)s')
+    logging.info('Access to Page Watering requested from IP: %s',request.remote_addr)
     valveState = getCurrValveState()
     # print(valveState)
     return render_template('watering.html', **valveState)
@@ -27,6 +33,8 @@ def action(valve):
 
 @app.route('/Automation/')
 def automation():
+    logging.basicConfig(filename='activitiy.log', level=logging.INFO, format='%(asctime)s %(message)s')
+    logging.info('Access to Page Automation requested from IP: %s',request.remote_addr)
     automationData = getAutomationData()
     return render_template('automation.html', **automationData)
 
@@ -60,13 +68,10 @@ def automationRunManual():
     return render_template('automation.html', **automationData)
 
 
-@app.route('/Sensors/')
-def sensors():
-    return render_template('sensors.html')
-
-
 @app.route('/Weather/')
 def weather():
+    logging.basicConfig(filename='activitiy.log', level=logging.INFO, format='%(asctime)s %(message)s')
+    logging.info('Access to Page Weather requested from IP: %s',request.remote_addr)
     return render_template('weather.html')
 
 

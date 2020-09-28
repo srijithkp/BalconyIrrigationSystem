@@ -1,5 +1,5 @@
 import configparser
-
+import logging
 ##### Variables ####
 automationData = {}
 
@@ -15,6 +15,8 @@ def automation_main():
 
 
 def resetAvgDurationValues():
+    logging.basicConfig(filename='activitiy.log', level=logging.INFO, format='%(asctime)s %(message)s')
+    logging.info('Executed action to reset the average values')
     config.read('config.ini')
     for valve in config.options('WATERING_DURATION_AVG'):
         config.set('WATERING_DURATION_AVG', valve,str(0))
@@ -23,6 +25,8 @@ def resetAvgDurationValues():
 
 
 def updtManualDurationValues(manualValues):
+    logging.basicConfig(filename='activitiy.log', level=logging.INFO, format='%(asctime)s %(message)s')
+    logging.info('Executed action to update the manual values')
     config.read('config.ini')
     #print(manualValues)
     for valve in config.options('WATERING_DURATION_MANUAL'):
