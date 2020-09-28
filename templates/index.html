@@ -1,29 +1,33 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
-        <title>BringNatureInside</title>
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='master.css') }}">
-    </head>
-    <body>
-        <nav>
-            <ul>
-                <li><a class="menuActive" href="/">Home</a></li>
-                <li><a href="/Watering/">Watering</a></li>
-                <li><a href="/Sensors/">Sensors</a></li>
-                <li><a href="/Weather/">Weather</a></li>        
-            </ul>
-        </nav>
-        <div>
-            <form action="/invalid/" target="_blank">
-                <button class="button buttonTwo" type="submit">Sensors</button>
-            </form>
-              <form action="/Watering/" target="_blank">
-                <button class="button buttonOne" type="submit">Watering</button>
-            </form>                  
-            <form action="/invalid/" target="_blank">
-                <button class="button buttonThree" type="submit">Weather</button>
-            </form>    
-        </div>
-    </body>
+
+<head>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+  <title>BringNatureInside</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='index.css') }}">
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li><a class="menuActive" href="/">Home</a></li>
+      <li><a href="/Watering/">Watering</a></li>
+      <li><a href="/Automation/">Automation</a></li>
+      <!-- <li><a href="/Sensors/">Sensors</a></li> -->
+      <li><a href="/Weather/">Weather</a></li>
+    </ul>
+  </nav>
+  <div>
+    <form action="/Automation/" target="_blank">
+      <button class="button buttonTwo" type="submit">Automation</button>
+    </form>
+    <form action="/Watering/" target="_blank">
+      <button class="button buttonOne" type="submit">Watering</button>
+    </form>
+    <form action="/invalid/" target="_blank">
+      <button class="button buttonThree" type="submit">Weather</button>
+    </form>
+  </div>
+</body>
+
 </html>

@@ -1,0 +1,93 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: Times, Times New Roman, serif;
+  font-size: 16px;
+  line-height: 1.5em;
+  background-image: url("BodyBackground.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+nav {
+  position: fixed;
+  top: 22vh;
+  background-color: #fff;
+  color: #fff;
+  width: 70%;
+  margin-left: 10%;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0%;
+  margin:0%
+}
+
+nav li {
+  display: inline;
+}
+
+nav a {
+  color: #61170e;
+  font-size: 18px;
+  padding-right: 5%;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #405d27;
+}
+
+.menuActive {
+  color: #405d27;
+  font-size: 19px;
+}
+
+.box {
+  position: absolute;
+  top: 45vh;
+  left: 25%;
+  padding: 3% 15%;
+  border-radius: 25px;
+  border: 2px solid #fff;
+  background: #e4c0ac;
+  color: #61170e;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 17px 10px -10px rgba(0, 0, 0, 0.4);
+}
+
+@media(max-width:480px) {
+  body {
+    background-image: url("MobileBackground.jpg");
+  }
+
+  nav {
+    top: 13%;
+    margin-left: 7%;
+  }
+
+  nav a {
+    padding-right: 3%;
+    font-size: 13px;
+  }
+
+  .menuActive {
+    font-size: 15px;
+  }
+
+  .box {
+    top: 43vh;
+    left: 10%;
+    font-size: 20px;
+    padding: 8% 17%;
+  }
+}
