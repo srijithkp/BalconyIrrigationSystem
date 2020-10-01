@@ -14,42 +14,52 @@ body {
   background-attachment: fixed;
 }
 
-nav {
+.sidenav {
+  height: 100%;
+  width: 0;
   position: fixed;
-  top: 22vh;
-  background-color: #fff;
-  color: #fff;
-  width: 70%;
-  margin-left: 10%;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #61170e;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 75px;
 }
 
-nav ul {
-  list-style: none;
-  padding: 0%;
-  margin: 0%
-}
-
-nav li {
-  display: inline;
-}
-
-nav a {
-  color: #61170e;
-  font-size: 18px;
-  padding-right: 5%;
-  font-weight: bold;
+.sidenav a {
+  padding: 20px 8px 8px 32px;
   text-decoration: none;
+  font-size: 20px;
+  color: #fff;
+  display: block;
+  transition: 0.3s;
 }
 
-nav a:hover {
-  color: #405d27;
+.sideText a:hover {
+       width: 100%;
+       border-radius:2px;
+       background:radial-gradient(circle at 94.02% 88.03%, #f58549, transparent 100%);
+       transition:all .5s ease;
+}
+.menuActive{
+  width: 100%;
+  border-radius:2px;
+  background:radial-gradient(circle at 94.02% 88.03%, #e4c0ac, transparent 100%);
+}
+.activePageIcon{
+  position: absolute;
+  top: 90vh;
+  left: 45%;
 }
 
-.menuActive {
-  color: #405d27;
-  font-size: 19px;
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
 }
-
 h3 {
   padding: 1%;
   margin: 1%;
@@ -58,8 +68,8 @@ h3 {
 
 .autoBox {
   position: relative;
-  top: 30vh;
-  left: 10%;
+  top: 20vh;
+  left: 15%;
   width: 80%;
   display: flex;
   flex-flow: row;
@@ -76,7 +86,7 @@ h3 {
   display: flex;
   flex-flow: column;
   padding: 1%;
-  margin: 1% 7%;
+  margin: 1% 5%;
   border-radius: 25px;
   border: 2px solid #fff;
   background: #e4c0ac;
@@ -127,21 +137,12 @@ h3 {
   body {
     background-image: url("MobileBackground.jpg");
   }
-
-  nav {
-    top: 13%;
-    margin-left: 7%;
+  .sidenav {
+    padding-top: 60px;
   }
-
-  nav a {
-    padding-right: 3%;
-    font-size: 13px;
+  .sidenav a {
+    font-size: 18px;
   }
-
-  .menuActive {
-    font-size: 15px;
-  }
-
   h3 {
     padding: 1%;
     margin: 1%;
@@ -154,7 +155,7 @@ h3 {
   }
 
   .autoBox {
-    top: 16vh;
+    top: 10vh;
     left: 1%;
     width: 90%;
     flex-flow: column;

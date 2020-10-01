@@ -14,42 +14,52 @@ body {
   background-attachment: fixed;
 }
 
-nav {
+.sidenav {
+  height: 100%;
+  width: 0;
   position: fixed;
-  top: 22vh;
-  background-color: #fff;
-  color: #fff;
-  width: 70%;
-  margin-left: 10%;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #61170e;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 75px;
 }
 
-nav ul {
-  list-style: none;
-  padding: 0%;
-  margin:0%
-}
-
-nav li {
-  display: inline;
-}
-
-nav a {
-  color: #61170e;
-  font-size: 18px;
-  padding-right: 5%;
-  font-weight: bold;
+.sidenav a {
+  padding: 20px 8px 8px 32px;
   text-decoration: none;
+  font-size: 20px;
+  color: #fff;
+  display: block;
+  transition: 0.3s;
 }
 
-nav a:hover {
-  color: #405d27;
+.sideText a:hover {
+       width: 100%;
+       border-radius:2px;
+       background:radial-gradient(circle at 94.02% 88.03%, #f58549, transparent 100%);
+       transition:all .5s ease;
+}
+.menuActive{
+  width: 100%;
+  border-radius:2px;
+  background:radial-gradient(circle at 94.02% 88.03%, #e4c0ac, transparent 100%);
+}
+.activePageIcon{
+  position: absolute;
+  top: 90vh;
+  left: 45%;
 }
 
-.menuActive {
-  color: #405d27;
-  font-size: 19px;
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
 }
-
 .plant {
   float: left;
   border-radius: 25px;
@@ -72,67 +82,67 @@ nav a:hover {
 .LeftOne {
   position: absolute;
   top: 30vh;
-  left: 10%;
+  left: 18%;
 }
 
 .LeftTwo {
   position: absolute;
   top: 50vh;
-  left: 10%;
+  left: 18%;
 }
 
 .LeftThree {
   position: absolute;
   top: 70vh;
-  left: 10%;
+  left: 18%;
 }
 
 .LeftFour {
   position: absolute;
   top: 70vh;
-  left: 25%;
+  left: 30%;
 }
 
 .RightOne {
   position: absolute;
   top: 30vh;
-  left: 70%;
+  left: 66%;
 }
 
 .RightTwo {
   position: absolute;
   top: 50vh;
-  left: 70%;
+  left: 66%;
 }
 
 .RightThree {
   position: absolute;
   top: 70vh;
-  left: 70%;
+  left: 66%;
 }
 
 .RightFour {
   position: absolute;
   top: 70vh;
-  left: 55%;
+  left: 54%;
 }
 
 .CentreTop {
   position: absolute;
   top: 30vh;
-  left: 40%;
+  left: 42%;
 }
 
 .Pump {
   position: absolute;
   top: 70vh;
-  left: 40%;
+  left: 42%;
 }
 
 .Fountain {
   position: absolute;
   top: 50vh;
-  left: 40%;
+  left: 42%;
 }
 
 /* The switch - the box around the slider */
@@ -187,19 +197,11 @@ input:checked+.slider:before {
   body {
     background-image: url("MobileBackground.jpg");
   }
-
-  nav {
-    top: 13%;
-    margin-left: 7%;
+  .sidenav {
+    padding-top: 60px;
   }
-
-  nav a {
-    padding-right: 3%;
-    font-size: 13px;
-  }
-
-  .menuActive {
-    font-size: 15px;
+  .sidenav a {
+    font-size: 18px;
   }
 
   .plant {
