@@ -1,0 +1,99 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: Times, Times New Roman, serif;
+  font-size: 16px;
+  line-height: 1.5em;
+  background-image: url("BodyBackground.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #61170e;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 75px;
+}
+
+.sidenav a {
+  padding: 20px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #fff;
+  display: block;
+  transition: 0.3s;
+}
+
+.sideText a:hover {
+       width: 100%;
+       border-radius:2px;
+       background:radial-gradient(circle at 94.02% 88.03%, #f58549, transparent 100%);
+       transition:all .5s ease;
+}
+.menuActive{
+  width: 100%;
+  border-radius:2px;
+  background:radial-gradient(circle at 94.02% 88.03%, #e4c0ac, transparent 100%);
+}
+.activePageIcon{
+  position: absolute;
+  top: 90vh;
+  left: 45%;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+.log {
+  position: absolute;
+  top: 21vh;
+  left: 15%;
+  padding: 1%;
+  border-radius: 15px;
+  background: #fff;
+  color: #61170e;
+  font-size: 12px;
+  text-align: left;
+  box-shadow: 0 17px 10px -10px rgba(0, 0, 0, 0.4);
+  width: 65%;
+}
+
+@media(max-width:480px) {
+  body {
+    background-image: url("MobileBackground.jpg");
+    line-height: 01em;
+  }
+  .sidenav {
+    padding-top: 60px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+  .log {
+    position: absolute;
+    top: 25vh;
+    left: 6%;
+    padding: 2%;
+    color: #61170e;
+    font-size: 8px;
+    text-align: left;
+    width: 70%;
+  }
+
+}

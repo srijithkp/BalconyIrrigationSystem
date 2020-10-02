@@ -3,7 +3,10 @@ from automation import getAutomationData, resetAvgDurationValues, updtManualDura
 from flask import Flask, request
 from flask import render_template
 from flask import request
+from collections import deque
 import logging
+log = logging.getLogger('werkzeug')
+log.setLevel(logging.ERROR)
 
 app = Flask(__name__)
 
@@ -74,6 +77,15 @@ def weather():
     logging.info('Access to Page Weather requested from IP: %s',request.remote_addr)
     return render_template('weather.html')
 
+@app.route('/Log/')
+def log():
+    logging.basicConfig(filename='activitiy.log', level=logging.INFO, format='%(asctime)s %(message)s')
+    logging.info('Access to Page Log requested from IP: %s',request.remote_addr)
+    with open('activitiy.log') as fin:
+        logListDesktop = deque(fin, 19)
+        logListMobile= deque(fin, 30)
+    #print(logList)
+    return render_template('log.html', logListDesktop=logListDesktop, logListMobile=logListMobile)
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000, host='0.0.0.0')

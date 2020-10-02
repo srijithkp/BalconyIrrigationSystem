@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+  <title>BringNatureInside</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='log.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "225px";
+}
+
+</script>
+
+<body>
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="sideText">
+      <a class="menuActive" href="/"><i class="fa fa-fw fa-home"></i>&nbspHome</a>
+      <a href="/Watering/"><i class="fa fa-tint fa-fw"></i>&nbspWatering</a>
+      <a href="/Automation/"><i class="fa fa-cogs fa-fw"></i>&nbspAutomation</a>
+      <a href="/Weather/"><i class="fa fa-cloud fa-fw"></i>&nbspWeather</a>
+      <a href="/Log/"><i class="fa fa-sticky-note fa-fw"></i>&nbspLog</a>
+    </div>
+  </div>
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+  <div class="log">
+    <a>{% for each in logListDesktop %}
+    {{ each }}<br>
+    {% endfor %}</a>
+  </div>
+</body>
+</html>
