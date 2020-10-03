@@ -60,24 +60,67 @@ body {
   font-size: 36px;
   margin-left: 50px;
 }
-.log {
+
+.weatherResults {
   position: absolute;
-  top: 21vh;
-  left: 15%;
-  padding: 1%;
+  top: 22vh;
+  left: 13%;
+  padding: 2%;
   border-radius: 15px;
   background: #fff;
   color: #61170e;
-  font-size: 12px;
-  text-align: left;
+  font-size: 16px;
+  text-align: center;
   box-shadow: 0 17px 10px -10px rgba(0, 0, 0, 0.4);
   width: 65%;
+}
+
+.icon{
+    background-position: left center;
+    background-repeat: no-repeat;
+    padding-left: 30px; /* Adjust according to image size to push text across. */
+}
+.tempIcon{
+    background-image: url(Temperature.svg);
+}
+.pressureIcon{
+    background-image: url(Pressure.svg);
+}
+.humidityIcon{
+    background-image: url(Humidity.svg);
+}
+.windIcon{
+    background-image: url(Windspeed.svg);
+}
+.sunriseIcon{
+    background-image: url(Sunrise.svg);
+}
+.sunsetIcon{
+    background-image: url(Sunset.svg);
+}
+
+h2{
+  margin :0%;
+}
+h3{
+  margin :0%;
+}
+.sectionLeft{
+    float: left;
+    text-align: left;
+    margin-left: 20%;
+    margin-right: 5%;
+}
+.sectionRight{
+    float: left;
+    text-align: left;
+    margin-left: 5%;
+    margin-right: 20%;
 }
 
 @media(max-width:480px) {
   body {
     background-image: url("MobileBackground.jpg");
-    line-height: 01em;
   }
   .sidenav {
     padding-top: 60px;
@@ -85,16 +128,29 @@ body {
   .sidenav a {
     font-size: 18px;
   }
-  .log {
-    position: absolute;
-    top: 25vh;
+  .weatherResults {
+    top: 18vh;
     left: 10%;
-    padding: 1%;
+    padding: 2%;
+    border-radius: 15px;
+    background: #fff;
     color: #61170e;
-    font-size: 8px;
-    text-align: left;
-    width: 70%;
+    font-size: 12px;
+    text-align: center;
     box-shadow: 0 0px 0px 0px rgba(0, 0, 0, 0);
+    width: 65%;
+  }
+  .sectionLeft{
+      float: none;
+      text-align: left;
+      margin-left: 18%;
+      margin-right: 5%;
+  }
+  .sectionRight{
+      float: none;
+      text-align: left;
+      margin-left: 18%;
+      margin-right: 5%;
   }
 
 }

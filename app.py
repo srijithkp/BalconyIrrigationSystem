@@ -1,10 +1,11 @@
-from watering import cntrlValve, getCurrValveState, runAutomatedWatering
-from automation import getAutomationData, resetAvgDurationValues, updtManualDurationValues
 from flask import Flask, request
 from flask import render_template
-from flask import request
 from collections import deque
 import logging
+from watering import cntrlValve, getCurrValveState, runAutomatedWatering
+from automation import getAutomationData, resetAvgDurationValues, updtManualDurationValues
+from weather import getWeatherData
+
 log = logging.getLogger('werkzeug')
 log.setLevel(logging.ERROR)
 
@@ -75,17 +76,18 @@ def automationRunManual():
 def weather():
     logging.basicConfig(filename='activitiy.log', level=logging.INFO, format='%(asctime)s %(message)s')
     logging.info('Access to Page Weather requested from IP: %s',request.remote_addr)
-    return render_template('weather.html')
+
+    weatherData = getWeatherData()
+    return render_template('weather.html', **weatherData)
 
 @app.route('/Log/')
 def log():
     logging.basicConfig(filename='activitiy.log', level=logging.INFO, format='%(asctime)s %(message)s')
     logging.info('Access to Page Log requested from IP: %s',request.remote_addr)
     with open('activitiy.log') as fin:
-        logListDesktop = deque(fin, 19)
-        logListMobile= deque(fin, 30)
+        logList = deque(fin, 19)
     #print(logList)
-    return render_template('log.html', logListDesktop=logListDesktop, logListMobile=logListMobile)
+    return render_template('log.html', logList=logList)
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000, host='0.0.0.0')
